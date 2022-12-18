@@ -11,12 +11,12 @@ $deskripsi = "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
 
 if ($pass == $pass2) {
   mysqli_query($koneksi,"insert into user values('','$user','$email','$pass','$deskripsi')");
- 
+  $benar = "anda sudah terdaftar!";
 // mengalihkan halaman kembali ke index.php
-header("location:login.php");
+header("location:login.php?benar=$benar");
 }else {
   $salah = "Password Tidak Sama";
-  header("location:registrasi.php?sal=$salah");
+  header("location:registrasi.php?gagal=$salah");
 }
 // menginput data ke database
 

@@ -22,9 +22,28 @@
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
+                    <?php
+                  if (isset($_GET['gagal'])) {
+                    ?> 
                     <div class="alert alert-danger" role="alert">
-                     This is a danger alert—check it out!
+                  
+                   <?php echo $_GET['gagal']; ?>
                     </div>
+                    <?php
+                    
+                  }
+
+                  if (isset($_GET['benar'])) {
+                    ?> 
+                    <div class="alert alert-success" role="alert">
+                  
+                   <?php echo $_GET['benar']; ?>
+                    </div>
+                    <?php
+                    
+                  }
+                  
+                  ?>
       
                       <form method='post' action = 'loginProses.php'>
       
@@ -46,7 +65,7 @@
                         </div>
       
                         <div class="pt-1 mb-4">
-                          <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                          <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                         </div>
       
                         <a class="small text-muted" href="#!">Forgot password?</a>
